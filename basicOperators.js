@@ -34,3 +34,14 @@ true + false //= 1
 null + 1 //= 1
 undefined + 1 //= NaN
 " \t \n" - 2 //= -2
+
+
+// What are the results of these expressions?
+
+5 > 4 //= true
+"apple" > "pineapple" //= false
+"2" > "12" //= true
+undefined == null //= true
+undefined === null //= false
+null == "\n0\n" //= false
+null === +"\n0\n" //= false
