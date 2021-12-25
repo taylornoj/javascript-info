@@ -1,10 +1,10 @@
-// Previously, to create a function we used the function declaration syntax:
+// Previously, to create a function we used the function DECLARATION syntax:
 function sayHi() {
   alert( "Hello" );
 }
 
 // there is another syntax for creating a function that is called
-// a function expression, which allows us to create a new function in the
+// a function EXPRESSION, which allows us to create a new function in the
 // middle of any expression
 let sayHi = function() {
   alert( "Hello" );
@@ -87,3 +87,62 @@ ask(
 
 // here, functions are declared right inside the ask(...) call
 // they have no name, and so are called anonymous
+
+
+
+
+//// FUNCTION EXPRESSION VS FUNCTION DECLARATION ////
+/* - syntax is different
+   - difference in when a function is created
+      - function expression is created when the execution reaches it and 
+      is usable only from that moment on
+      - a function declaration can be called earlier than it is defined
+      - however a function declaration is only visible inside the code block 
+      in which it resides
+*/
+
+let age = 16; // take 16 as an example
+
+if (age < 18) {
+  welcome();               // \   (runs)
+                           //  |
+  function welcome() {     //  |
+    alert("Hello!");       //  |  Function Declaration is available
+  }                        //  |  everywhere in the block where it's declared
+                           //  |
+  welcome();               // /   (runs)
+
+} else {
+
+  function welcome() {
+    alert("Greetings!");
+  }
+}
+
+// Here we're out of curly braces,
+// so we can not see Function Declarations made inside of them.
+
+welcome(); // Error: welcome is not defined
+
+// what can we do to make welcome visible outside of if?
+// use a function expression and assign welcome to the variable that is 
+// declared outside of if and has the proper visibility:
+let age = prompt("What is your age?", 18);
+
+let welcome;
+
+if (age < 18) {
+
+  welcome = function() {
+    alert("Hello!");
+  };
+
+} else {
+
+  welcome = function() {
+    alert("Greetings!");
+  };
+
+}
+
+welcome(); // ok now
