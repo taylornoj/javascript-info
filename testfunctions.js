@@ -1,7 +1,5 @@
-function min(a, b) {
-  return (a > b) ? b : a;
+function pow(x, n) {
+  return (x ** n);
 }
-
-console.log(min(2, 3))
-console.log(min(3, -1))
-console.log((1, 1))
+console.log(pow(3, 2))
+console.log(pow(3, 3))

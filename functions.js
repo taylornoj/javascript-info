@@ -203,3 +203,11 @@ function min(a, b) {
 function min(a, b) {
   return (a > b) ? b : a;
 }
+
+
+
+// write a function pow(x, n) that returns x in power n
+// aka - multiplies x by itself n times and returns the result
+function pow(x, n) {
+  return (x ** n);
+}
