@@ -163,3 +163,27 @@ Function naming:
 - a name should clearly describe what the function does
 - a function is an action, so function names are usually verbal
 */
+
+
+
+
+//// FUNCTION TASKS ////
+
+// rewrite the following function without if, instead replacing it with ? and then ||
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  } else {
+    return confirm('Did parents allow you?');
+  }
+}
+
+// ternary operator:
+function checkAge(age) {
+  return (age > 18) ? true : confirm('Did parents allow you?');
+}
+
+// OR operator:
+function checkAge(age) {
+  return (age > 18) || confirm('Did parents allow you?');
+}
