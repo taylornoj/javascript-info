@@ -96,7 +96,9 @@ ask(
    - difference in when a function is created
       - function expression is created when the execution reaches it and 
       is usable only from that moment on
-      - a function declaration can be called earlier than it is defined
+      - a function declaration can be called earlier than it is defined (because
+        they are processed before the code block is executed, they are visible 
+        everywhere in the block)
       - however a function declaration is only visible inside the code block 
       in which it resides
 */
