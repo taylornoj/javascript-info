@@ -80,3 +80,20 @@ if (i < 3) { alert(i); i++ }
 // if condition → run body and run step
 if (i < 3) { alert(i); i++ }
 // ...finish, because now i == 3
+
+
+
+//// TASKS ////
+
+// Rewrite the code changing the for loop to while without altering
+// its behaviour
+
+for (let i = 0; i < 3; i++) {
+  alert( `number ${i}!` );
+}
+
+let i = 0;
+while(i < 3) {
+  alert( `number ${i}!` );
+  i++;
+}
