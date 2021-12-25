@@ -187,3 +187,19 @@ function checkAge(age) {
 function checkAge(age) {
   return (age > 18) || confirm('Did parents allow you?');
 }
+
+
+
+// write a function min(a, b) which returns the least of the two numbers a and b
+function min(a, b) {
+  if (a > b) {
+    return b;
+  } else {
+    return a;
+  }
+}
+
+// * using ternary operator:
+function min(a, b) {
+  return (a > b) ? b : a;
+}
