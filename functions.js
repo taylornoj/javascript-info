@@ -146,3 +146,20 @@ When a value is passed as a function parameter, it is also called an argument
 
 // In the example above, the function showMessage is declared with two parameteres,
 // then called with two arguments: from and "Hello"
+
+
+
+
+
+//// SUMMARY ////
+/*
+- values passed to a function as parameters are copied to its local variables
+- a function mat access outer variables - but it works only from inside out, the code
+outside of the function doesn't see it's local variables
+- a function can return a value - if it doesn't then it's result is undefined
+
+
+Function naming:
+- a name should clearly describe what the function does
+- a function is an action, so function names are usually verbal
+*/
