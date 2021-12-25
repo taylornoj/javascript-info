@@ -1,7 +1,7 @@
 // FUNCTIONS
 
 
-//// Function Declaration ////
+//// FUNCTION DECLARATION ////
 function showMessage() {
   alert( 'Hello everyone!' );
 }
@@ -25,7 +25,7 @@ which outputs it
 
 
 
-//// Local Variables ////
+//// LOCAL VARIABLES ////
 // A variable declared inside a function is only visible inside that function
 
 function showMessage() {
@@ -41,7 +41,7 @@ alert( message ); // <-- Error! The variable is local to the function
 
 
 
-//// Outer Variables ////
+//// OUTER VARIABLES ////
 // a function can access an outer variable:
 let userName = 'John';
 
@@ -87,10 +87,62 @@ showMessage();
 
 alert( userName ); // John, unchanged, the function did not access the outer variable
 
-
 /*
 Variables declared outside of any function, such as the outer userName in 
 the code above, as called global.
 Global variables are visible from any function (unless shadowed by locals)
 It's good practice to minimize the use of global variables
 */
+
+
+
+
+//// PARAMETERS ////
+function showMessage(from, text) { // parameters: from, text
+  alert(from + ': ' + text);
+}
+
+showMessage('Ann', 'Hello!'); // Ann: Hello! 
+showMessage('Ann', "What's up?"); // Ann: What's up? 
+
+/*
+When the function is called in lines 106 & 107, the given values
+are copied to local variables form and text.
+The function then uses them
+*/
+
+// We have another example:
+function showMessage(from, text) {
+
+  from = '*' + from + '*'; // make "from" look nicer
+
+  alert( from + ': ' + text );
+}
+
+let from = "Ann";
+
+showMessage(from, "Hello"); // *Ann*: Hello
+
+// the value of "from" is the same, the function modified a local copy
+alert( from ); // Ann
+
+/*
+we have a variable from and pass it to the function.
+The function changes from, but the change is not seen outside, because a
+function always gets a copy of the value
+*/
+
+
+
+
+//// PARAMETERS VS. ARGUMENTS ////
+/*
+When a value is passed as a function parameter, it is also called an argument
+- a parameter is the variable listed inside the parentheses in the function declaration
+- an argument is the value that is passed to the function when it is called
+*/
+
+// We declare functions listing their parameters, then call them passing arguments
+
+// In the example above, the function showMessage is declared with two parameteres,
+// then called with two arguments: from and "Hello"
