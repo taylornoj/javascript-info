@@ -27,7 +27,7 @@ let user = {
 
 // however dot notation won't work:
 // this would give a syntax error
-user.likes birds = true
+// user.likes birds = true
 
 // the alernative is using square bracket notation:
 let user = {};
@@ -40,3 +40,35 @@ alert(user["likes birds"]); // true
 
 // delete
 delete user["likes birds"];
+
+
+
+// Property Value Shorthand //
+// we often use existing variables as values for property names:
+function makeUser(name, age) {
+  return {
+    name: name,
+    age: age,
+    // ...other properties
+  };
+}
+
+let user = makeUser("John", 30);
+alert(user.name); // John
+
+// properties in above object have same name as variables. The use-case of
+// making a property from a variable is so common, that there's a special property
+// value shorthand to make it shorter - just write the key:
+function makeUser(name, age) {
+  return {
+    name, // same as name: name
+    age,  // same as age: age
+    // ...
+  };
+}
+
+// both normal properties and shorthand can be in the same object
+let user = {
+  name,  // same as name:name
+  age: 30
+};
