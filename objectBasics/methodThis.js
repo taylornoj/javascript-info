@@ -56,3 +56,22 @@ user.sayHi(); // John
 // you can technically drop 'this' and use user.name however if user is 
 // copied to another variable and we overwrite user with something else, then
 // it will access the wrong object
+
+
+// Arrow functions have no "this"
+// if we reference this from such a function, it's taken from the outer
+// normal function. An example:
+let user = {
+  firstName: "Ilya",
+  sayHi() {
+    let arrow = () => alert(this.firstName);
+    arrow();
+  }
+};
+
+user.sayHi(); // Ilya
+
+// this is useful when we actually do not want to have a separate this, but
+// rather to take it form the outer context
+
+// the value of "this" is defined at runtime 
