@@ -99,3 +99,78 @@ for (let key in user) {
 // in alert this outputs as "name" "John" "age" "30" "isAdmin" "true"
 // we can also use another variable name here instead of key - like 
 // "for (let prop in obj)"
+
+
+
+
+//// TASKS ////
+
+// 1. write the code, one line for each action:
+let user = {
+  name = "John",
+  surname = "Smith",
+};
+
+user.name = "Pete";
+delete user.name;
+
+
+
+// 2. write the function isEmpty(obj) which returns true is the object
+// has no properties, false if otherwise
+
+function isEmpty(obj) {
+  for (let key in obj) {
+    return false;
+  }
+  return true;
+}
+
+// here, if the loop starts, there is a property and therefore we can return
+// false right away
+
+
+
+// 3. we have an object storing salaries of our team. Write the code to sum
+// all salaries and store in the variable sum
+let salaries = {
+  John: 100,
+  Ann: 160,
+  Pete: 130
+}
+
+let sum = 0;
+for (let key in salaries) {
+  sum += salaries[key];
+}
+
+alert(sum); //390
+
+
+
+// crate a function multiplyNumeric(obj) that multiplies all numberic
+// property values of obj by 2
+// example:
+// before the call
+let menu = {
+  width: 200,
+  height: 300,
+  title: "My menu"
+};
+
+multiplyNumeric(menu);
+
+// after the call
+menu = {
+  width: 400,
+  height: 600,
+  title: "My menu"
+};
+
+function multiplyNumeric(obj) {
+  for (let key in obj) {
+    if(typeof obj[key] == 'number') {
+      obj[key] *= 2;
+    }
+  }
+}
