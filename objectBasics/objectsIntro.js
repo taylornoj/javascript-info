@@ -72,3 +72,28 @@ let user = {
   name,  // same as name:name
   age: 30
 };
+
+
+
+//// for...in loop ////
+// to walk over all keys of an object, there exists a special form of the 
+// loop: for...in
+
+// syntax:
+for (key in object) {
+  // executes the body for each key among object properties
+}
+
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // keys
+  alert( key );  // name, age, isAdmin
+  // values for the keys
+  alert( user[key] ); // John, 30, true
+}
+// in alert this outputs as "name" "John" "age" "30" "isAdmin" "true"
