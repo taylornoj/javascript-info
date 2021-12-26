@@ -97,3 +97,5 @@ for (let key in user) {
   alert( user[key] ); // John, 30, true
 }
 // in alert this outputs as "name" "John" "age" "30" "isAdmin" "true"
+// we can also use another variable name here instead of key - like 
+// "for (let prop in obj)"
