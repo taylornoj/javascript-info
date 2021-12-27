@@ -25,3 +25,12 @@ alert( fruits ); // Orange, Pear
 let fruits = ["Orange", "Pear"];
 fruits.unshift('Apple');
 alert( fruits ); // Apple, Orange, Pear
+
+
+// loops
+// for...of loop - doesn't give access to the index
+let fruits = ["Apple", "Orange", "Plum"];
+// iterates over array elements
+for (let fruit of fruits) {
+  alert( fruit );
+}
