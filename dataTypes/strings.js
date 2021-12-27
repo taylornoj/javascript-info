@@ -28,3 +28,8 @@ alert( str[str.length - 1] ); // o
 for (let char of "Hello") {
   alert(char); // H,e,l,l,o (char becomes "H", then "e", then "l" etc)
 }
+
+// changing case
+alert( 'Interface'.toUpperCase() ); // INTERFACE
+alert( 'Interface'.toLowerCase() ); // interface
+
