@@ -114,3 +114,25 @@ alert(obj === objCopy); // false (not same reference)
 obj.d = 4;
 alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
 alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}
+
+
+// '...' in code can mean either rest parameter OR spread syntax:
+/*
+When ... is at the end of function parameters, 
+it’s “rest parameters” and gathers the rest of 
+the list of arguments into an array.
+
+
+When ... occurs in a function call or alike, 
+it’s called a “spread syntax” and expands an array into a list.
+*/
+
+/*
+Use patterns:
+
+Rest parameters are used to create functions 
+that accept any number of arguments.
+
+The spread syntax is used to pass an array to functions 
+that normally require a list of many arguments.
+*/
