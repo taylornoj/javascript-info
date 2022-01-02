@@ -37,3 +37,80 @@ function showName(firstName, lastName, ...titles) {
 showName("Julius", "Caesar", "Consul", "Imperator");
 
 // ** the rest parameters must be at the end
+
+//// SPREAD SYNTAX ////
+// we know about Math.max:
+console.log( Math.max(3, 5, 1) ); // 5
+
+// but if we have an array [3, 5, 1] how do we call Math.max with it?
+// this wont work because Math.max expects a list of 
+// numeric arguments, not a single array:
+let arr = [3, 5, 1];
+console.log( Math.max(arr) ); // NaN
+
+/*
+So we can use spread syntax!
+It looks similar to rest parameters, also using '...'
+but it does the opposite.
+
+When ...arr is used in the function call, it 'expands' an
+iterable object arr into the list of arguments
+
+However for Math.max:
+*/
+let arr = [3, 5, 1];
+console.log( Math.max(...arr) ); // 5 (spread turns array into a list of arguments)
+
+// further examples of how it can be used:
+let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+console.log( Math.max(...arr1, ...arr2) ); // 8
+
+let arr1 = [1, -2, 3, 4];
+let arr2 = [8, 3, -8, 1];
+console.log( Math.max(1, ...arr1, 2, ...arr2, 25) ); // 25
+
+// can also be used to merge arrays:
+let arr = [3, 5, 1];
+let arr2 = [8, 9, 15];
+let merged = [0, ...arr, 2, ...arr2];
+console.log(merged); // 0,3,5,1,2,8,9,15 (0, then arr, then 2, then arr2)
+
+// can use spread syntax to turn the string into an array of characters:
+let str = "Hello";
+console.log( [...str] ); // H,e,l,l,o
+
+
+
+// using spread to copy an array/object:
+// COPY AN ARRAY:
+let arr = [1, 2, 3];
+let arrCopy = [...arr]; // spread the array into a list of parameters
+                        // then put the result into a new array
+
+// do the arrays have the same contents?
+alert(JSON.stringify(arr) === JSON.stringify(arrCopy)); // true
+
+// are the arrays equal?
+alert(arr === arrCopy); // false (not same reference)
+
+// modifying our initial array does not modify the copy:
+arr.push(4);
+alert(arr); // 1, 2, 3, 4
+alert(arrCopy); // 1, 2, 3
+
+// COPY AN OBJECT:
+let obj = { a: 1, b: 2, c: 3 };
+let objCopy = { ...obj }; // spread the object into a list of parameters
+                          // then return the result in a new object
+
+// do the objects have the same contents?
+alert(JSON.stringify(obj) === JSON.stringify(objCopy)); // true
+
+// are the objects equal?
+alert(obj === objCopy); // false (not same reference)
+
+// modifying our initial object does not modify the copy:
+obj.d = 4;
+alert(JSON.stringify(obj)); // {"a":1,"b":2,"c":3,"d":4}
+alert(JSON.stringify(objCopy)); // {"a":1,"b":2,"c":3}
