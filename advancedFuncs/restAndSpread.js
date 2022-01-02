@@ -21,3 +21,19 @@ function sumAll(...args) {  // '...' means gathe the remaining parameters into a
 }
 console.log(sumAll(1));
 console.log(sumAll(1, 2, 3));
+
+// this means you can also set the first parameters as variables, and gather only the rest
+// example below: the first two arguments go into variables and the rest go into titles array:
+
+function showName(firstName, lastName, ...titles) {
+  console.log(firstName + ' ' + lastName); // Julius Caesar
+
+  // the rest go into titles array:
+  // ex. titles = ["Consul", "Imperator"]
+  console.log(titles[0]); // Consul
+  console.log(titles[1]); // Imperator
+  console.log(titles.length); // 2
+}
+showName("Julius", "Caesar", "Consul", "Imperator");
+
+// ** the rest parameters must be at the end
